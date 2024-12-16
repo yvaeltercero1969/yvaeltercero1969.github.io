@@ -3,24 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InsightForge</title>
+    <title>InsightForge - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            background: url('images/hero.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .section-bg {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+        .section-dark {
+            background-color: #2f2f2f;
+            color: white;
+            padding: 60px 0;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div id="header"></div>
 
-    <!-- Products Section -->
-    <div class="container py-5">
-        <h1 class="text-center mb-4">Our Products</h1>
-        <!-- Content here -->
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-3 mb-3">Welcome to InsightForge</h1>
+            <p class="lead fs-4 mb-4">Unlock the full potential of your data with our tools and expertise.</p>
+            <a href="products.html" class="btn btn-primary btn-lg">Explore Our Products</a>
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="section-bg">
+        <div class="container text-center">
+            <h2 class="section-title">Our Products</h2>
+            <div class="row text-center">
+                <div class="col-md-6 mb-5">
+                    <h3>InsightBase</h3>
+                    <p>A powerful yet easy-to-use tool for small businesses to analyze and visualize data.</p>
+                    <a href="insightbase.html" class="btn btn-outline-primary">Learn More</a>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <h3>InsightPro</h3>
+                    <p>An advanced analytics solution for enterprises, featuring predictive AI capabilities.</p>
+                    <a href="insightpro.html" class="btn btn-outline-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="section-dark">
+        <div class="container text-center">
+            <h2 class="section-title">Our Services</h2>
+            <p class="mb-4">From consultancy to tailored tools, we deliver solutions that fit your business needs.</p>
+            <a href="services.html" class="btn btn-secondary">View Services</a>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="section-bg">
+        <div class="container text-center">
+            <h2 class="section-title">Ready to Get Started?</h2>
+            <p class="mb-4">Partner with InsightForge to turn your data into actionable insights.</p>
+            <a href="mailto:info@yvaeltercero.com" class="btn btn-primary btn-lg">Contact Us</a>
+        </div>
     </div>
 
     <div id="footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Incluir header y footer
         fetch('header.html').then(response => response.text()).then(data => {
             document.getElementById('header').innerHTML = data;
         });
