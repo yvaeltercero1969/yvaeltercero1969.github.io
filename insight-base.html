@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightForge - InsightBase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="container py-5 content">
+        <h1 class="text-center mb-4">InsightBase</h1>
+        <p class="text-center fs-4 mb-5">"Simplify Your Data, Amplify Your Insights"</p>
+
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <!-- Placeholder for Image -->
+                <div style="background-color: #f8f9fa; width: 100%; height: 300px; border: 1px solid #ddd; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <!-- <span class="text-muted">Image Placeholder</span> -->
+                    <img src="images/base.jpeg" alt="InsightBase" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <p>
+                    InsightBase is your gateway to understanding and utilizing your data like never before. Designed specifically for small businesses and solo entrepreneurs,
+                    it provides an intuitive platform for analyzing and visualizing your data with ease. Whether you're tracking sales trends, managing customer data, or generating
+                    reports, InsightBase simplifies the process, giving you the clarity you need to make informed decisions.
+                </p>
+                <p>
+                    Our tool comes with pre-built templates and visualizations, so you can hit the ground running without needing extensive technical knowledge. InsightBase
+                    emphasizes user-friendliness and speed, ensuring you spend less time crunching numbers and more time growing your business. Say goodbye to data overwhelm and hello to actionable insights.
+                </p>
+                <p>
+                    At InsightBase, we believe in empowering every business to make data-driven decisions, no matter their size or resources. Try InsightBase today and
+                    experience how simple data analysis can transform your operations and unlock hidden opportunities.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        fetch('header.html').then(response => response.text()).then(data => {
+            document.getElementById('header').innerHTML = data;
+        });
+
+        fetch('footer.html').then(response => response.text()).then(data => {
+            document.getElementById('footer').innerHTML = data;
+        });
+    </script>
+</body>
+</html>
