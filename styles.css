@@ -35,6 +35,15 @@ body {
     margin: 15px 0;
 }
 
+.product-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: auto;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
 
 
 .logo {
