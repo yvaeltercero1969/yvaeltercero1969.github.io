@@ -5,80 +5,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InsightForge - Services</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.webp">
-
     <style>
-        .service-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
+        .page-header {
+            padding: 160px 0 80px;
             text-align: center;
-            transition: box-shadow 0.3s ease-in-out;
+            position: relative;
         }
-        .service-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(168, 85, 247, 0.2) 0%, transparent 60%);
+            z-index: 0;
         }
-        .service-icon {
+
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
             font-size: 3rem;
-            color: #007BFF;
-            margin-bottom: 15px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-section {
+            padding: 80px 0;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 40px;
+            height: 100%;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(99, 102, 241, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 24px;
+        }
+
+        .service-icon i {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            padding: 80px 0;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.25rem;
+            }
+
+            .service-card {
+                padding: 32px;
+            }
         }
     </style>
 </head>
 <body>
     <div id="header"></div>
 
-    <!-- Services Section -->
-    <div class="container py-5 content">
-        <h1 class="text-center mb-4">Our Services</h1>
-        <p class="text-center fs-4 mb-5">"Customized Solutions to Unlock the Power of Your Data"</p>
-
-        <div class="row">
-            <!-- Service 1: Consultancy -->
-            <div class="col-md-6 mb-4">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="bi bi-briefcase"></i> <!-- Bootstrap Icons -->
-                    </div>
-                    <h3>Consultancy</h3>
-                    <p>
-                        Our data science consultancy services provide expert guidance to help you harness the power of data. Whether you're looking to develop a strategy,
-                        implement new technologies, or optimize existing systems, we tailor our expertise to meet your unique business needs.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Service 2: Tailoring Insight Tools -->
-            <div class="col-md-6 mb-4">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="bi bi-tools"></i>
-                    </div>
-                    <h3>Tailoring Insight Tools</h3>
-                    <p>
-                        We customize our proprietary Insight tools, such as InsightBase and InsightPro, to seamlessly integrate with your workflows. Our team ensures that
-                        these tools align with your specific objectives, enabling you to maximize their value and achieve measurable results.
-                    </p>
-                </div>
-            </div>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Our Services</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Customized solutions to unlock the power of your data.</p>
         </div>
+    </div>
 
-        <div class="text-center mt-5">
-            <p class="fs-5">
-                At InsightForge, we combine deep industry expertise with innovative solutions to drive your success. Partner with us to transform your data challenges into
-                opportunities for growth and efficiency.
-            </p>
-            <p class="mt-4">
-                <a href="mailto:info@insightforge.top" class="btn btn-primary">Contact Us for Pricing</a>
-            </p>
+    <!-- Services Section -->
+    <div class="services-section content">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Consultancy -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <h3>Consultancy</h3>
+                        <p>Our data science consultancy services provide expert guidance to help you harness the power of data. Whether you're looking to develop a strategy, implement new technologies, or optimize existing systems, we tailor our expertise to meet your unique business needs.</p>
+                    </div>
+                </div>
+
+                <!-- Tailoring Insight Tools -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-tools"></i>
+                        </div>
+                        <h3>Tailoring Insight Tools</h3>
+                        <p>We customize our proprietary Insight tools, such as InsightBase and InsightPro, to seamlessly integrate with your workflows. Our team ensures that these tools align with your specific objectives, enabling you to maximize their value.</p>
+                    </div>
+                </div>
+
+                <!-- Data Strategy -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h3>Data Strategy</h3>
+                        <p>We help you build a comprehensive data strategy that aligns with your business goals. From data governance to analytics roadmaps, we provide the framework you need to become a truly data-driven organization.</p>
+                    </div>
+                </div>
+
+                <!-- Integration Services -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-plug"></i>
+                        </div>
+                        <h3>Integration Services</h3>
+                        <p>Connect your existing systems and data sources seamlessly. Our integration experts ensure smooth data flow across your organization, enabling unified analytics and reporting capabilities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-section">
+                <div class="cta-box" data-aos="zoom-in">
+                    <h2>Let's Work Together</h2>
+                    <p>At InsightForge, we combine deep industry expertise with innovative solutions to drive your success.</p>
+                    <a href="mailto:info@insightforge.top" class="btn btn-primary btn-lg">
+                        Contact Us <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({ once: true, duration: 600, easing: 'ease-out' });
+
         fetch('header.html').then(response => response.text()).then(data => {
             document.getElementById('header').innerHTML = data;
         });
@@ -87,7 +220,5 @@
             document.getElementById('footer').innerHTML = data;
         });
     </script>
-    <!-- Include Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </body>
 </html>

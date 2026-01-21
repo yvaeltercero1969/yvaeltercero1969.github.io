@@ -1,10 +1,20 @@
 <!-- Footer -->
-<footer class="footer bg-light py-3">
-    <div class="container text-center">
-        <p class="text-muted">&copy; 2024 InsightForge. </p>
-        <br>
-        <p class="text-muted">Y Va El Tercero LLC.</p>
-        <br>
-        <p class="text-muted">All Rights Reserved.</p>
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                <span style="font-weight: 600; background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">InsightForge</span>
+                <span class="text-muted ms-2">by Y Va El Tercero LLC</span>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="text-muted mb-0" style="font-size: 0.875rem;">
+                    &copy; <span id="current-year"></span> All Rights Reserved
+                </p>
+            </div>
+        </div>
     </div>
 </footer>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>

@@ -5,38 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InsightForge - About Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.webp">
+    <style>
+        .page-header {
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+        }
 
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 48px;
+        }
+
+        .about-content p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.9;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+
+        .about-content p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .values-section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #a855f7;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.4s ease;
+        }
+
+        .value-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+        }
+
+        .value-icon i {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .company-note {
+            text-align: center;
+            padding: 40px 0;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.25rem;
+            }
+
+            .about-content {
+                padding: 32px;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="header"></div>
 
-    <!-- About Section -->
-    <div class="container py-5 content">
-        <h1 class="text-center mb-4">About InsightForge</h1>
-        <p class="text-center fs-4 mb-5">"Empowering Businesses with Data-Driven Solutions"</p>
-
-        <div class="row align-items-center">
-            <!-- <div class="col-md-6 text-center"> -->
-                <!-- <img src="images/about-placeholder.png" alt="About InsightForge" class="img-fluid rounded"> -->
-            <!-- </div> -->
-            <div class="text-center mt-5">
-                <p>
-                    At InsightForge, we are dedicated to helping businesses transform their data into actionable insights. Founded with a vision to simplify complex data analytics, our tools and services empower organizations of all sizes to harness the power of their data and make smarter, data-driven decisions.
-                </p>
-                <p>
-                    Our flagship products, <strong>InsightBase</strong> and <strong>InsightPro</strong>, are designed to meet the needs of small businesses and enterprises alike. From intuitive data visualizations to advanced predictive analytics, we deliver solutions that drive efficiency, clarity, and growth.
-                </p>
-                <p>
-                    With a team of experienced data scientists, engineers, and business strategists, we combine technology with expertise to deliver customized solutions for our clients. Our mission is to bridge the gap between businesses and data, enabling innovation and success.
-                </p>
-            </div>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">About InsightForge</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Empowering businesses with data-driven solutions.</p>
         </div>
+    </div>
 
-        <div class="text-center mt-5">
-            <p class="text-muted" style="font-size: 0.8rem;">
-                InsightForge is a trading name of <strong>Y Va El Tercero LLC</strong>.
+    <!-- About Section -->
+    <div class="about-section content">
+        <div class="container">
+            <div class="about-content" data-aos="fade-up">
+                <p>At InsightForge, we are dedicated to helping businesses transform their data into actionable insights. Founded with a vision to simplify complex data analytics, our tools and services empower organizations of all sizes to harness the power of their data and make smarter, data-driven decisions.</p>
+
+                <p>Our flagship products, <strong style="color: #a5b4fc;">InsightBase</strong> and <strong style="color: #a5b4fc;">InsightPro</strong>, are designed to meet the needs of small businesses and enterprises alike. From intuitive data visualizations to advanced predictive analytics, we deliver solutions that drive efficiency, clarity, and growth.</p>
+
+                <p>With a team of experienced data scientists, engineers, and business strategists, we combine technology with expertise to deliver customized solutions for our clients. Our mission is to bridge the gap between businesses and data, enabling innovation and success.</p>
+            </div>
+
+            <!-- Values Section -->
+            <div class="values-section">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-label">Our Values</span>
+                    <h2 class="section-title">What Drives Us</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <h3>Innovation</h3>
+                            <p>We constantly push boundaries to deliver cutting-edge analytics solutions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h3>Trust</h3>
+                            <p>Your data security and privacy are our top priorities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h3>Partnership</h3>
+                            <p>We work alongside our clients as true partners in their success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="company-note" data-aos="fade-up">
+                InsightForge is a trading name of <strong>Y Va El Tercero LLC</strong>
             </p>
         </div>
     </div>
@@ -44,7 +230,10 @@
     <div id="footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({ once: true, duration: 600, easing: 'ease-out' });
+
         fetch('header.html').then(response => response.text()).then(data => {
             document.getElementById('header').innerHTML = data;
         });

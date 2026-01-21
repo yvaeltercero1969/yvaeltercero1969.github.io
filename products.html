@@ -5,32 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InsightForge - Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.webp">
+    <style>
+        .page-header {
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+        }
 
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.2) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products-section {
+            padding: 80px 0;
+        }
+
+        .product-showcase {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 48px;
+            margin-bottom: 40px;
+            transition: all 0.4s ease;
+        }
+
+        .product-showcase:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-showcase h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-showcase .tagline {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+
+        .product-showcase p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .feature-list li i {
+            color: #a855f7;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.25rem;
+            }
+
+            .product-showcase {
+                padding: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="header"></div>
 
-    <!-- Products Section -->
-    <div class="container py-5 content">
-        <h1 class="text-center mb-4">Our Products</h1>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Our Products</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Powerful analytics tools designed to transform your data into actionable insights.</p>
+        </div>
+    </div>
 
-        <div class="product-container">
-            <!-- Product 1: DataAnalyzer Basic -->
-            <div class="product-card">
-                <h2 class="product-title">InsightBase</h2>
-                <p class="product-description">A powerful yet easy-to-use tool designed for small businesses and solo entrepreneurs. Simplify data analysis and uncover valuable insights with intuitive visualizations and pre-built reporting templates.
-                </p>
-                <a href="insight-base.html" class="btn btn-primary">Learn More</a>
+    <!-- Products Section -->
+    <div class="products-section content">
+        <div class="container">
+            <!-- InsightBase -->
+            <div class="product-showcase" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2>InsightBase</h2>
+                        <p class="tagline">Perfect for Small Businesses</p>
+                        <p>A powerful yet easy-to-use tool designed for small businesses and solo entrepreneurs. Simplify data analysis and uncover valuable insights with intuitive visualizations and pre-built reporting templates.</p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle-fill"></i> Intuitive drag-and-drop interface</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Pre-built dashboard templates</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Real-time data visualization</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Export reports in multiple formats</li>
+                        </ul>
+                        <a href="insight-base.html" class="btn btn-primary">
+                            Learn More <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="feature-icon mx-auto mb-4" style="width: 120px; height: 120px; font-size: 3rem; border-radius: 24px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Product 2: DataAnalyzer PRO -->
-            <div class="product-card">
-                <h2 class="product-title">InsightPro</h2>
-                <p class="product-description">A robust analytics solution for enterprises. Leverage advanced AI, predictive modeling, and customizable reporting to transform complex data into actionable strategies.
-                </p>
-                <a href="insight-pro.html" class="btn btn-primary">Learn More</a>
+            <!-- InsightPro -->
+            <div class="product-showcase" data-aos="fade-up" data-aos-delay="100">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                        <h2>InsightPro</h2>
+                        <p class="tagline">Enterprise-Grade Analytics</p>
+                        <p>A robust analytics solution for enterprises. Leverage advanced AI, predictive modeling, and customizable reporting to transform complex data into actionable strategies.</p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle-fill"></i> AI-powered predictive analytics</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Advanced machine learning models</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Custom API integrations</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Enterprise-level security</li>
+                        </ul>
+                        <a href="insight-pro.html" class="btn btn-primary">
+                            Learn More <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 text-center">
+                        <div class="feature-icon mx-auto mb-4" style="width: 120px; height: 120px; font-size: 3rem; border-radius: 24px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -38,8 +186,10 @@
     <div id="footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Incluir header y footer
+        AOS.init({ once: true, duration: 600, easing: 'ease-out' });
+
         fetch('header.html').then(response => response.text()).then(data => {
             document.getElementById('header').innerHTML = data;
         });

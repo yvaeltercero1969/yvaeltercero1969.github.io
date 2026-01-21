@@ -5,33 +5,219 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InsightForge - InsightPro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.webp">
+    <style>
+        .page-header {
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+        }
 
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(168, 85, 247, 0.25) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: #c4b5fd;
+            margin-bottom: 24px;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .product-section {
+            padding: 80px 0;
+        }
+
+        .product-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 48px;
+            margin-bottom: 60px;
+        }
+
+        .product-content p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.9;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+
+        .product-image {
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.02);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .feature-item i {
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .page-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .product-content {
+                padding: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="header"></div>
 
-    <div class="container py-5 content">
-        <h1 class="text-center mb-4">InsightPro</h1>
-        <p class="text-center fs-4 mb-5">"Powering Enterprises with Advanced Analytics"</p>
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="product-badge" data-aos="fade-up">
+                <i class="bi bi-cpu"></i>
+                <span>Enterprise Solution</span>
+            </div>
+            <h1 class="page-title" data-aos="fade-up" data-aos-delay="100">InsightPro</h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">"Powering Enterprises with Advanced Analytics"</p>
+        </div>
+    </div>
 
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center">
-                <!-- Image -->
-                <img src="images/pro.jpg" alt="InsighPro" class="img-fluid">
+    <!-- Product Section -->
+    <div class="product-section content">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+                    <img src="images/pro.jpg" alt="InsightPro Dashboard" class="img-fluid product-image">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <div class="product-content">
+                        <p>InsightPro is the ultimate tool for enterprises looking to unlock the full potential of their data. With advanced analytics, AI-driven insights, and customizable reporting, InsightPro empowers organizations to make data-driven decisions with confidence and precision.</p>
+
+                        <p>Designed for large-scale operations, InsightPro supports complex data analysis, predictive modeling, and deep integration with your existing systems. Whether you're forecasting trends, analyzing customer behavior, or optimizing performance, InsightPro delivers actionable intelligence at enterprise scale.</p>
+
+                        <p>With InsightPro, you gain access to cutting-edge tools and a robust analytics engine, giving you the power to transform data into strategic opportunities. Elevate your decision-making process and stay ahead in a competitive market.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-md-6">
-                <p>
-                    InsightPro is the ultimate tool for enterprises looking to unlock the full potential of their data. With advanced analytics, AI-driven insights, and customizable reporting, InsightPro empowers organizations to make data-driven decisions with confidence and precision.
-                </p>
-                <p>
-                    Designed for large-scale operations, InsightPro supports complex data analysis, predictive modeling, and deep integration with your existing systems. Whether you're forecasting trends, analyzing customer behavior, or optimizing performance, InsightPro delivers actionable intelligence at enterprise scale.
-                </p>
-                <p>
-                    With InsightPro, you gain access to cutting-edge tools and a robust analytics engine, giving you the power to transform data into strategic opportunities. Elevate your decision-making process and stay ahead in a competitive market with InsightPro.
-                </p>
+            <!-- Features Grid -->
+            <div class="features-grid" data-aos="fade-up">
+                <div class="feature-item">
+                    <i class="bi bi-robot"></i>
+                    <h4>AI-Powered Analytics</h4>
+                    <p>Leverage machine learning algorithms to uncover hidden patterns and predictions.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="bi bi-diagram-3"></i>
+                    <h4>Predictive Modeling</h4>
+                    <p>Forecast future trends with sophisticated statistical models.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="bi bi-plug"></i>
+                    <h4>Custom Integrations</h4>
+                    <p>Connect seamlessly with your existing tools via our robust API.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="bi bi-shield-lock"></i>
+                    <h4>Enterprise Security</h4>
+                    <p>Bank-level encryption and compliance with industry standards.</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-section" data-aos="fade-up">
+                <a href="mailto:info@insightforge.top" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);">
+                    Request a Demo <i class="bi bi-arrow-right ms-2"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -39,7 +225,10 @@
     <div id="footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({ once: true, duration: 600, easing: 'ease-out' });
+
         fetch('header.html').then(response => response.text()).then(data => {
             document.getElementById('header').innerHTML = data;
         });
